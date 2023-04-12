@@ -73,21 +73,25 @@ const createScene = () => {
   rocketParts.topb.position.y = 40;
 
   rocketParts.mida = new THREE.Mesh(
-    new THREE.CylinderGeometry(18, 20, 20, 64),
+    new THREE.CylinderGeometry(18, 20, 16, 64),
     new THREE.MeshStandardMaterial({ color: 0xffffff })
   );
   scene.add(rocketParts.mida);
-  rocketParts.mida.position.y = 20;
+  rocketParts.mida.position.y = 22;
+
+  rocketParts.midc = new THREE.Mesh(
+    new THREE.CylinderGeometry(20, 20, 8, 64),
+    new THREE.MeshStandardMaterial({ color: 0xffffff })
+  );
+  scene.add(rocketParts.midc);
+  rocketParts.midc.position.y = 10;
 
   rocketParts.midb = new THREE.Mesh(
-    new THREE.CylinderGeometry(20, 18, 20, 64),
-    new THREE.MeshStandardMaterial(
-      { color: 0xffffff },
-      (metallness = 1),
-      (roughness = 0)
-    )
+    new THREE.CylinderGeometry(20, 18, 16, 64),
+    new THREE.MeshStandardMaterial({ color: 0xffffff })
   );
   scene.add(rocketParts.midb);
+  rocketParts.midb.position.y = -2;
 
   rocketParts.bota = new THREE.Mesh(
     new THREE.CylinderGeometry(18, 14, 10, 64),
@@ -208,6 +212,7 @@ const createScene = () => {
   rocket.add(
     rocketParts.midb,
     rocketParts.mida,
+    rocketParts.midc,
     rocketParts.topa,
     rocketParts.topb,
     rocketParts.bota,
