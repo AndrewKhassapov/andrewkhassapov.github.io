@@ -14,6 +14,13 @@ body {
   overflow: hidden;
 }
 
+.nav-link {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  padding: 2vh 2vw 2vh 2vw;
+}
+
 .rain {
   position: absolute;
   width: 1rem;
