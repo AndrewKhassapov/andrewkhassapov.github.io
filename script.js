@@ -49,35 +49,37 @@ const createScene = () => {
 
   // Create rocket group
 
-  const rocket_topc = new THREE.Mesh(
+  const rocketParts = {};
+
+  rocketParts.topc = new THREE.Mesh(
     new THREE.CylinderGeometry(0, 6, 4, 64),
     new THREE.MeshStandardMaterial({ color: 0xff0000 })
   );
-  scene.add(rocket_topc);
-  rocket_topc.position.y = 60;
+  scene.add(rocketParts.topc);
+  rocketParts.topc.position.y = 60;
 
-  const rocket_topa = new THREE.Mesh(
+  rocketParts.topa = new THREE.Mesh(
     new THREE.CylinderGeometry(6, 12, 8, 64),
     new THREE.MeshStandardMaterial({ color: 0xff0000 })
   );
-  scene.add(rocket_topa);
-  rocket_topa.position.y = 54;
+  scene.add(rocketParts.topa);
+  rocketParts.topa.position.y = 54;
 
-  const rocket_topb = new THREE.Mesh(
+  rocketParts.topb = new THREE.Mesh(
     new THREE.CylinderGeometry(12, 18, 20, 64),
     new THREE.MeshStandardMaterial({ color: 0xff0000 })
   );
-  scene.add(rocket_topb);
-  rocket_topb.position.y = 40;
+  scene.add(rocketParts.topb);
+  rocketParts.topb.position.y = 40;
 
-  const rocket_mida = new THREE.Mesh(
+  rocketParts.mida = new THREE.Mesh(
     new THREE.CylinderGeometry(18, 20, 20, 64),
     new THREE.MeshStandardMaterial({ color: 0xffffff })
   );
-  scene.add(rocket_mida);
-  rocket_mida.position.y = 20;
+  scene.add(rocketParts.mida);
+  rocketParts.mida.position.y = 20;
 
-  const rocket_midb = new THREE.Mesh(
+  rocketParts.midb = new THREE.Mesh(
     new THREE.CylinderGeometry(20, 18, 20, 64),
     new THREE.MeshStandardMaterial(
       { color: 0xffffff },
@@ -85,16 +87,16 @@ const createScene = () => {
       (roughness = 0)
     )
   );
-  scene.add(rocket_midb);
+  scene.add(rocketParts.midb);
 
-  const rocket_bota = new THREE.Mesh(
+  rocketParts.bota = new THREE.Mesh(
     new THREE.CylinderGeometry(18, 14, 10, 64),
     new THREE.MeshStandardMaterial({ color: 0xffffff })
   );
-  scene.add(rocket_bota);
-  rocket_bota.position.y = -15;
+  scene.add(rocketParts.bota);
+  rocketParts.bota.position.y = -15;
 
-  const rocket_botb = new THREE.Mesh(
+  rocketParts.botb = new THREE.Mesh(
     new THREE.CylinderGeometry(14, 12, 6, 64),
     new THREE.MeshStandardMaterial({
       color: 0xeeeeee,
@@ -103,10 +105,10 @@ const createScene = () => {
       side: THREE.DoubleSide
     })
   );
-  scene.add(rocket_botb);
-  rocket_botb.position.y = -20;
+  scene.add(rocketParts.botb);
+  rocketParts.botb.position.y = -20;
 
-  const rocket_botc = new THREE.Mesh(
+  rocketParts.botc = new THREE.Mesh(
     new THREE.CylinderGeometry(10, 8, 4, 64),
     new THREE.MeshStandardMaterial({
       color: 0x333333,
@@ -115,10 +117,10 @@ const createScene = () => {
       side: THREE.DoubleSide
     })
   );
-  scene.add(rocket_botc);
-  rocket_botc.position.y = -22;
+  scene.add(rocketParts.botc);
+  rocketParts.botc.position.y = -22;
 
-  const rocket_wina = new THREE.Mesh(
+  rocketParts.wina = new THREE.Mesh(
     new THREE.CylinderGeometry(12, 12, 23, 64),
     new THREE.MeshStandardMaterial({
       color: 0xeeeeee,
@@ -127,11 +129,11 @@ const createScene = () => {
       side: THREE.DoubleSide
     })
   );
-  scene.add(rocket_wina);
-  rocket_wina.position.set(0, 20, 10);
-  rocket_wina.rotation.set(Math.PI / 2, 0, 0);
+  scene.add(rocketParts.wina);
+  rocketParts.wina.position.set(0, 20, 10);
+  rocketParts.wina.rotation.set(Math.PI / 2, 0, 0);
 
-  const rocket_winb = new THREE.Mesh(
+  rocketParts.winb = new THREE.Mesh(
     new THREE.CylinderGeometry(9, 9, 24, 64),
     new THREE.MeshStandardMaterial({
       color: 0x0077ff,
@@ -140,29 +142,29 @@ const createScene = () => {
       side: THREE.DoubleSide
     })
   );
-  scene.add(rocket_winb);
-  rocket_winb.position.set(0, 20, 10);
-  rocket_winb.rotation.set(Math.PI / 2, 0, 0);
+  scene.add(rocketParts.winb);
+  rocketParts.winb.position.set(0, 20, 10);
+  rocketParts.winb.rotation.set(Math.PI / 2, 0, 0);
 
-  const rocket_fina = new THREE.Mesh(
+  rocketParts.fina = new THREE.Mesh(
     new THREE.BoxBufferGeometry(40, 8, 18),
     new THREE.MeshStandardMaterial({
       color: 0xff0000
     })
   );
-  scene.add(rocket_fina);
-  rocket_fina.position.set(16, -10, 0);
-  rocket_fina.rotation.set(Math.PI / 2, 0.7 * Math.PI, 0);
+  scene.add(rocketParts.fina);
+  rocketParts.fina.position.set(16, -10, 0);
+  rocketParts.fina.rotation.set(Math.PI / 2, 0.7 * Math.PI, 0);
 
-  const rocket_finb = new THREE.Mesh(
+  rocketParts.finb = new THREE.Mesh(
     new THREE.BoxBufferGeometry(40, 8, 18),
     new THREE.MeshStandardMaterial({
       color: 0xff0000
     })
   );
-  scene.add(rocket_finb);
-  rocket_finb.position.set(-16, -10, 0);
-  rocket_finb.rotation.set(-Math.PI / 2, 0.7 * Math.PI, 0);
+  scene.add(rocketParts.finb);
+  rocketParts.finb.position.set(-16, -10, 0);
+  rocketParts.finb.rotation.set(-Math.PI / 2, 0.7 * Math.PI, 0);
 
   var flame_material = new THREE.ShaderMaterial({
     uniforms: {
@@ -204,18 +206,18 @@ const createScene = () => {
 
   rocket = new THREE.Group();
   rocket.add(
-    rocket_midb,
-    rocket_mida,
-    rocket_topa,
-    rocket_topb,
-    rocket_bota,
-    rocket_botb,
-    rocket_botc,
-    rocket_topc,
-    rocket_wina,
-    rocket_winb,
-    rocket_fina,
-    rocket_finb,
+    rocketParts.midb,
+    rocketParts.mida,
+    rocketParts.topa,
+    rocketParts.topb,
+    rocketParts.bota,
+    rocketParts.botb,
+    rocketParts.botc,
+    rocketParts.topc,
+    rocketParts.wina,
+    rocketParts.winb,
+    rocketParts.fina,
+    rocketParts.finb,
     rocket_fire
   );
   rocket.position.y = 0;
