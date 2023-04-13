@@ -14,8 +14,16 @@ body {
   overflow: hidden;
 }
 
+.nav-menu {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 200px;
+}
+
 .nav-link {
-  position: absolute;
+  position: static;
   overflow: hidden;
   z-index: 1;
   padding: 2vh 2vw 2vh 2vw;
