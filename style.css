@@ -20,7 +20,7 @@ body {
 .font-blend {
   font-weight: bold;
   font-stretch: expanded;
-  color: rgba(185, 247, 255, 0.2);
+  color: rgba(185, 247, 255, 0.1);
   margin: 0;
 }
 
