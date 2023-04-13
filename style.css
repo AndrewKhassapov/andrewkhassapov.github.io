@@ -19,7 +19,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 200px;
+  width: 100px;
 }
 
 .nav-link {
@@ -40,10 +40,10 @@ body {
 }
 
 .drop {
+  position: absolute;
   width: 1rem;
   height: 7rem;
   background: #ffffff;
-  position: absolute;
   border-radius: 20%;
   opacity: 0.2;
 }
@@ -140,6 +140,6 @@ body {
     transform: translateY(-1200px);
   }
   to {
-    transform: translateY(869px);
+    transform: translateY(900px);
   }
 }
