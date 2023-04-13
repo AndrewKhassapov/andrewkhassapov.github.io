@@ -20,7 +20,7 @@ body {
 .font-blend {
   font-weight: bold;
   font-stretch: expanded;
-  color: rgba(2, 5, 20, 0.25);
+  color: rgba(2, 5, 20, 0.5);
 }
 
 .nav-menu {
