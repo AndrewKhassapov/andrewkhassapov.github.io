@@ -137,17 +137,19 @@ const createScene = () => {
   rocketParts.wina.position.set(0, 20, 10);
   rocketParts.wina.rotation.set(Math.PI / 2, 0, 0);
 
+  // Rocket window
   rocketParts.winb = new THREE.Mesh(
-    new THREE.CylinderGeometry(9, 9, 24, 64),
-    new THREE.MeshStandardMaterial({
+    new THREE.CylinderGeometry(9, 9, 8, 64),
+    new THREE.MeshPhysicalMaterial({
       color: 0x0077ff,
-      roughness: 0.6,
-      metalness: 1,
+      roughness: 0.1,
+      transmission: 1,
+      thickness: 0.9,
       side: THREE.DoubleSide
     })
   );
   scene.add(rocketParts.winb);
-  rocketParts.winb.position.set(0, 20, 10);
+  rocketParts.winb.position.set(0, 20, 18);
   rocketParts.winb.rotation.set(Math.PI / 2, 0, 0);
 
   rocketParts.fina = new THREE.Mesh(
