@@ -5,6 +5,7 @@ body {
   background: linear-gradient(90deg, rgb(2, 5, 20) 0%, rgb(13, 14, 66) 20%, rgb(17, 18, 82) 50%, rgb(3, 3, 43) 80%, rgb(2, 5, 20) 100%);
   overflow: hidden;
   perspective: 10rem;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 #canvas,
@@ -14,6 +15,12 @@ body {
   height: 100%;
   overflow: hidden;
   top: 0;
+}
+
+.font-blend {
+  font-weight: bold;
+  font-stretch: expanded;
+  color: rgba(2, 5, 20, 0.25);
 }
 
 .nav-menu {
@@ -28,6 +35,22 @@ body {
   position: static;
   overflow: hidden;
   z-index: 1;
+  padding: 2vh 2vw 2vh 2vw;
+}
+
+.footer-menu {
+  position: absolute;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  bottom: 0;
+}
+
+.footer-link {
+  position: static;
+  overflow: hidden;
+  z-index: -1;
   padding: 2vh 2vw 2vh 2vw;
 }
 
