@@ -52,7 +52,7 @@ const createScene = () => {
   const rocketParts = {};
 
   rocketParts.topc = new THREE.Mesh(
-    new THREE.CylinderGeometry(0, 6, 4, 64),
+    new THREE.ConeGeometry(6, 4, 64),
     new THREE.MeshStandardMaterial({ color: 0xff0000 })
   );
   scene.add(rocketParts.topc);
