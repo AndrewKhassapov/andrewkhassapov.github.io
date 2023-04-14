@@ -1,5 +1,9 @@
+import * as THREE from 'three';
+import { OrbitControls } from 'js/three/OrbitControls.js';
+
 let scene,
   camera,
+  controls,
   fieldOfView,
   aspectRatio,
   nearPlane,
@@ -46,6 +50,10 @@ const createScene = () => {
   container.appendChild(renderer.domElement);
 
   window.addEventListener("resize", handleWindowResize, false);
+
+  // Add OrbitControls
+  controls = new OrbitControls(camera, renderer.domElement);
+  controls.target.z = 0;
 
   // Create rocket group
 
