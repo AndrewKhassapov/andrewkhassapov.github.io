@@ -47,6 +47,10 @@ const createScene = () => {
 
   window.addEventListener("resize", handleWindowResize, false);
 
+  // Add OrbitControls
+  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.target.z = 0;
+
   // Create rocket group
 
   const rocketParts = {};
