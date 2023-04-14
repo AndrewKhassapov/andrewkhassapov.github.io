@@ -1,0 +1,17 @@
+{
+  "name": "Three.js rocket",
+  "version": "1.0.0",
+  "description": "Three.js rocket model.",
+  "type" : "module",
+  "main": "script.js",
+  "scripts": {
+    "start": "script.js",
+    "three":"https://cdnjs.cloudflare.com/ajax/libs/three.js/0.151.3/three.min.js",
+    "three-orbit-controls":"https://unpkg.com/three@0.151.3/examples/jsm/controls/OrbitControls.js"
+  },
+  "person":{
+    "name": "Andrew Khassapov",
+    "email": "andrew.khassapov@gmail.com"
+  },
+  "license": "MIT"
+}
