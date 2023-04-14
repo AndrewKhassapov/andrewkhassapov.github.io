@@ -1,3 +1,6 @@
+import * as THREE from './build/three.module.min.js';
+import { OrbitControls } from './examples/jsm/controls/OrbitControls.js';
+
 let scene,
   camera,
   fieldOfView,
