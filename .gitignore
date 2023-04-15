@@ -1,1 +1,6 @@
 ref/
+node_modules/three-orbitcontrols
+node_modules/three/src
+node_modules/three/examples/fonts
+node_modules/three/examples/jsm
+!node_modules/three/examples/jsm/controls
