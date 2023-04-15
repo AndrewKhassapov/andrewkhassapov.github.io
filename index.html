@@ -16,7 +16,7 @@
   <link rel="mask-icon" href="img/icon.svg" />
 
   <link rel="stylesheet" type="text/css" href="style.css" />
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.151.3/three.min.js"></script> //-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.151.3/three.min.js"></script>
   <script type="module">
     import * as THREE from "https://cdnjs.cloudflare.com/ajax/libs/three.js/0.151.3/three.module.min.js";
     import { OrbitControls } from "https://unpkg.com/three@0.112/examples/jsm/controls/OrbitControls.js";
@@ -74,7 +74,6 @@
       // Add OrbitControls
       controls = new OrbitControls(camera, renderer.domElement);
       controls.target.z = 0;
-      console.log(OrbitControls);
 
       // Create rocket group
 
