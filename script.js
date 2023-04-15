@@ -11,6 +11,10 @@ let scene,
   HEIGHT,
   WIDTH;
 
+const DIV_ID = "canvas" // Target div
+const TARGET_ROCKET_POSITION = 40; // Target rocket position, y-axis.
+const ANIMATION_DURATION = 2000; // Duration in ms.
+
 const app = () => {
 
   const createScene = () => {
@@ -44,7 +48,7 @@ const app = () => {
 
     renderer.shadowMap.enabled = true;
 
-    container = document.getElementById("canvas");
+    container = document.getElementById(DIV_ID);
     container.appendChild(renderer.domElement);
 
     window.addEventListener("resize", handleWindowResize, false);
@@ -54,56 +58,56 @@ const app = () => {
     const rocketParts = {};
 
     rocketParts.topc = new THREE.Mesh(
-      new THREE.ConeGeometry(6, 4, 64),
+      new THREE.ConeGeometry(6, 4, 64, 16),
       new THREE.MeshStandardMaterial({ color: 0xff0000 })
     );
     scene.add(rocketParts.topc);
     rocketParts.topc.position.y = 60;
 
     rocketParts.topa = new THREE.Mesh(
-      new THREE.CylinderGeometry(6, 12, 8, 64),
+      new THREE.CylinderGeometry(6, 12, 8, 64, 16),
       new THREE.MeshStandardMaterial({ color: 0xff0000 })
     );
     scene.add(rocketParts.topa);
     rocketParts.topa.position.y = 54;
 
     rocketParts.topb = new THREE.Mesh(
-      new THREE.CylinderGeometry(12, 18, 20, 64),
+      new THREE.CylinderGeometry(12, 18, 20, 64, 16),
       new THREE.MeshStandardMaterial({ color: 0xff0000 })
     );
     scene.add(rocketParts.topb);
     rocketParts.topb.position.y = 40;
 
     rocketParts.mida = new THREE.Mesh(
-      new THREE.CylinderGeometry(18, 20, 16, 64),
+      new THREE.CylinderGeometry(18, 20, 16, 64, 16),
       new THREE.MeshStandardMaterial({ color: 0xffffff })
     );
     scene.add(rocketParts.mida);
     rocketParts.mida.position.y = 22;
 
     rocketParts.midc = new THREE.Mesh(
-      new THREE.CylinderGeometry(20, 20, 8, 64),
+      new THREE.CylinderGeometry(20, 20, 8, 64, 16),
       new THREE.MeshStandardMaterial({ color: 0xffffff })
     );
     scene.add(rocketParts.midc);
     rocketParts.midc.position.y = 10;
 
     rocketParts.midb = new THREE.Mesh(
-      new THREE.CylinderGeometry(20, 18, 16, 64),
+      new THREE.CylinderGeometry(20, 18, 16, 64, 16),
       new THREE.MeshStandardMaterial({ color: 0xffffff })
     );
     scene.add(rocketParts.midb);
     rocketParts.midb.position.y = -2;
 
     rocketParts.bota = new THREE.Mesh(
-      new THREE.CylinderGeometry(18, 14, 10, 64),
+      new THREE.CylinderGeometry(18, 14, 10, 64, 16),
       new THREE.MeshStandardMaterial({ color: 0xffffff })
     );
     scene.add(rocketParts.bota);
     rocketParts.bota.position.y = -15;
 
     rocketParts.botb = new THREE.Mesh(
-      new THREE.CylinderGeometry(14, 12, 6, 64),
+      new THREE.CylinderGeometry(14, 12, 6, 64, 16),
       new THREE.MeshStandardMaterial({
         color: 0xeeeeee,
         roughness: 0.5,
@@ -115,7 +119,7 @@ const app = () => {
     rocketParts.botb.position.y = -20;
 
     rocketParts.botc = new THREE.Mesh(
-      new THREE.CylinderGeometry(10, 8, 4, 64),
+      new THREE.CylinderGeometry(10, 8, 4, 64, 16),
       new THREE.MeshStandardMaterial({
         color: 0x333333,
         roughness: 0,
@@ -127,7 +131,7 @@ const app = () => {
     rocketParts.botc.position.y = -22;
 
     rocketParts.wina = new THREE.Mesh(
-      new THREE.CylinderGeometry(12, 12, 23, 64),
+      new THREE.CylinderGeometry(12, 12, 23, 64, 4),
       new THREE.MeshStandardMaterial({
         color: 0xeeeeee,
         roughness: 0.5,
@@ -141,7 +145,7 @@ const app = () => {
 
     // Rocket window
     rocketParts.winb = new THREE.Mesh(
-      new THREE.CylinderGeometry(9, 9, 8, 64),
+      new THREE.CylinderGeometry(9, 9, 8, 64, 4),
       new THREE.MeshPhysicalMaterial({
         color: 0x0077ff,
         roughness: 0.1,
@@ -206,7 +210,7 @@ const app = () => {
     });
 
     rocket_fire = new THREE.Mesh(
-      new THREE.CylinderGeometry(6, 0, 20, 64),
+      new THREE.CylinderGeometry(6, 0, 20, 64, 4),
       flame_material
     );
     scene.add(rocket_fire);
@@ -253,15 +257,12 @@ const app = () => {
     scene.add(ambientLight, directionalLight, pointLight);
   };
 
-  const targetRocketPosition = 40;
-  const animationDuration = 2000;
-
   const loop = () => {
-    const t = (Date.now() % animationDuration) / animationDuration;
+    const t = (Date.now() % ANIMATION_DURATION) / ANIMATION_DURATION;
 
     renderer.render(scene, camera);
 
-    const delta = targetRocketPosition * Math.sin(Math.PI * 2 * t);
+    const delta = TARGET_ROCKET_POSITION * Math.sin(Math.PI * 2 * t);
     if (rocket) {
       rocket.rotation.y += 0.01;
       rocket.rotation.x += 0.01;
