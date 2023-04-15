@@ -1,14 +1,13 @@
-import * as THREE from "./node_modules/three/build/three.module.js";
-import { OrbitControls } from "./node_modules/three/examples/jsm/controls/OrbitControls.js"
+import { OrbitControls } from "https://unpkg.com/three@0.112/examples/jsm/controls/OrbitControls.js";
 
 let scene,
   camera,
-  controls,
   fieldOfView,
   aspectRatio,
   nearPlane,
   farPlane,
   renderer,
+  controls,
   container,
   rocket,
   rocket_fire,
@@ -21,7 +20,7 @@ const createScene = () => {
 
   scene = new THREE.Scene();
 
-  //scene.fog = new THREE.Fog(0x03032b, 10, 1500);
+  scene.fog = new THREE.Fog(0x8aabff, 10, 1500);
 
   aspectRatio = WIDTH / HEIGHT;
   fieldOfView = 60;
@@ -96,7 +95,7 @@ const createScene = () => {
 
   rocketParts.midb = new THREE.Mesh(
     new THREE.CylinderGeometry(20, 18, 16, 64),
-    new THREE.MeshStandardMaterial({ color: 0xffffff })
+    new THREE.MeshStandardMaterial({ color: 0xffffff, receiveShadow: false })
   );
   scene.add(rocketParts.midb);
   rocketParts.midb.position.y = -2;
@@ -191,7 +190,6 @@ const createScene = () => {
     },
     vertexShader: `
     varying vec2 vUv;
-
     void main() {
       vUv = uv;
       gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
