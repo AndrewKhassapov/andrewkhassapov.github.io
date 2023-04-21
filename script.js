@@ -224,21 +224,10 @@ const app = () => {
     rocket_fire.position.y = -30;
 
     rocket = new THREE.Group();
+    for (const property in rocketParts) {
+      rocket.add(rocketParts[property])
+    }
     rocket.add(
-      rocketParts.midb,
-      rocketParts.midd,
-      rocketParts.mida,
-      rocketParts.midc,
-      rocketParts.topa,
-      rocketParts.topb,
-      rocketParts.bota,
-      rocketParts.botb,
-      rocketParts.botc,
-      rocketParts.topc,
-      rocketParts.wina,
-      rocketParts.winb,
-      rocketParts.fina,
-      rocketParts.finb,
       rocket_fire
     );
     rocket.position.y = 0;
