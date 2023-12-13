@@ -72,6 +72,40 @@ body {
   z-index: -1;
 }
 
+.star {
+  position: absolute;
+  transform-origin: center;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: orange;
+  box-shadow: 0 0 35px 5px yellow, 0 0 25px 10px yellow inset;
+  opacity: 1;
+  z-index: -2;
+}
+
+.sun {
+  left: 30vw;
+  top: 2vh;
+
+  animation: pulse 120s linear infinite both 10s;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: orange;
+    transform: translateY(-10vh) scale(0.5);
+  }
+  50% {
+    background-color: white;
+    transform: translateY(50vh) scale(1);
+  }
+  100% {
+    background-color: orange;
+    transform: translateY(110vh) scale(0.5);
+  }
+}
+
 .drop {
   position: absolute;
   width: 1rem;
